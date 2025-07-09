@@ -5,17 +5,77 @@
 }
 
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     min-height: 100vh;
+    background-image: url('img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;;
+    
 }
 
+.titulo {
+  position: relative;
+  top: 80px;
+  font-size: 60px;
+  color: white;
+  text-shadow:-5px 5px 0 black,
+              1px -1px 0 black,
+              -1px 1px 0 black,
+              1px 1px 0 black;
+  text-align: center;
+  display: block;
+}
+
+
+.otraopcion {
+    display: inline-flex;             /* Flex + respeta dimensiones */
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+    margin-left: 140px;
+    margin-top: 10px;
+    cursor: pointer;
+    z-index: 9999;
+    position: relative;
+}
+
+
+.alert-contenido {
+    display: flex;
+    align-items: center;
+
+}
+.alert {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+
+
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contenido-otro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
 .tarjeta{
     position: relative;
     width: 300px;
-    height: 350px;
+    height: 500px;
     margin: 30px;
+    perspective: 600px;
 }
 
 .tarjeta .card{
@@ -24,12 +84,14 @@ body{
     height: 100%;
     backface-visibility: hidden;
     overflow: hidden;
+    border: none;
+    border-radius: 10px;
     transition: .5s;
 
 }
 
 .tarjeta .front{
-    transform: perspective(600px) rotateY(0deg);
+    transform: rotateY(0deg);
     box-shadow: 0 5px 10px black;
 }
 
@@ -41,35 +103,51 @@ body{
 }
 
 .tarjeta .back{
-    transform: perspective(600px) rotateY(180deg);
+    transform: rotateY(180deg);
+    background-color: rgb(199, 221, 255);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* distribuye el contenido arriba y abajo */
+    padding: 20px;
+    height: 100%;
+
 
 }
 
 .tarjeta:hover .front{
-    transform: perspective(600px) rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .tarjeta:hover .back{
-    transform: perspective(600px) rotateY(360deg);
+    transform: rotateY(360deg);
 }
 
-.titulo{
-    text-align: center;
-    padding-top: 100px;
-    font-size: 2.5rem;
+
+.boton {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: rgb(255, 115, 215);
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  text-align: center;
+  width: fit-content;
 }
 
-.card{
-    background-color: rgb(255, 233, 208);;
-    }
-
-.card-title{
-    text-align: center;
+.boton:hover{
+    background-color: rgb(170, 79, 255);
 }
 
-.btn{
-    display: block;
+.texto{
+    color: white;
+    margin: 30px;
+    margin-left: 100px;
+    margin-right: 80px;
+    margin-top: 100px;
+}
+
+.texto ul{
+    font-size: 20px;
+
 }
